@@ -1,0 +1,55 @@
+doctype 5
+html(xmlns="http://www.w3.org/1999/xhtml", xmlns:fb="http://ogp.me/ns/fb#")
+	head
+		title Dubmixes.com
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		link(href='http://fonts.googleapis.com/css?family=Droid+Sans', rel='stylesheet')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+		script(src='/js/dm.js')
+		script(src='/js/lb.js')
+
+		script(src='http://connect.soundcloud.com/sdk.js')
+		script(src='/js/sc.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/js/client.js')
+		
+		body
+			#container
+				#logincontainer
+					#loginPanel
+						fb:login-button(onlogin="", autologoutlink="true")
+						div(id="fb-root")
+						
+				h1 Dubmixes 
+				#main
+					#playcontainer
+						#playing
+							!=playing_now
+						#playcontrols
+							div#ajax-loader
+							span Groups
+							button#playlists-btn Playlists
+						#playsurface
+							!=groups_cache
+					#chat
+						#messages
+							#connecting
+								.wrap Connecting...
+							#nicknames
+							#lines
+							form#send-message
+								input#message
+								button Send
+					br.clear
+				#footer
+					p dubmixes.com | Powered by Soundcloud and Node.js | no affil
+				script(src='/js/fb.js')
+				script(src='//static.getclicky.com/js')
+				script
+					try{clicky.init(66581937);}catch(e){}
+
+				
+				
+				
+				
+				
